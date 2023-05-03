@@ -22,7 +22,7 @@ function TodoList({ todos, dispatch }) {
               onClick={() =>
                 dispatch({ type: "delete-todo", payload: todo.id })
               }
-              className="font-3xl hover:bg-[#fc5e5e] p-2 hover:rounded transiton-all"
+              className="font-3xl hover:bg-caution p-2 hover:rounded transiton-all"
               size={45}
             />
           </div>
