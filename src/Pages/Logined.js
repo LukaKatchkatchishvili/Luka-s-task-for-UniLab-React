@@ -13,7 +13,7 @@ const Login = () => {
   return (
     <>
       {loggedUser?<Navbar loggedUser={loggedUser} />:''}
-      <TodoApp />
+      {loggedUser?<TodoApp />:''}
     </>
   );
 };
