@@ -35,7 +35,7 @@ const RegisterForm = () => {
       localStorage.setItem("user", JSON.stringify(input));
       setNotFilledName(false);
       setNotFilledImg(false);
-      navigate("/logined");
+      navigate("/");
     }
   };
   return (
