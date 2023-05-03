@@ -9,7 +9,7 @@ const Login = () => {
     if (loggedUser == null) {
       navigate("/registration");
     }
-  }, []);
+  }, [loggedUser, navigate]);
   return (
     <>
       {loggedUser?<Navbar loggedUser={loggedUser} />:''}
