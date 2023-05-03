@@ -28,6 +28,7 @@ function TodoList({ todos, dispatch }) {
           </div>
         </li>
       ))}
+      {todos.length<1?<div className="text-center font-bold text-xl">There is not any daily task :)</div>:""}
     </ul>
   );
 }
