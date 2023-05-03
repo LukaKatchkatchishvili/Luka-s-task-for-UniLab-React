@@ -8,19 +8,33 @@ const RegisterForm = () => {
     name: "",
     img: "",
   });
-  const [notFilled, setNotFilled] = useState(false);
+  const [notFilledName, setNotFilledName] = useState(false);
+  const [notFilledImg, setNotFilledImg] = useState(false);
   const [tooManyChar, setTooManyChar] = useState(false);
   const handleSignIn = (e) => {
-    if (input.name.length < 2 || input.img.length < 2) {
-      setNotFilled(true);
+    let error = 0;
+    if (input.name.length < 2) {
+      error++;
+      setNotFilledName(true);
+    } else {
+      setNotFilledName(false);
     }
-    if (input.name.length > 5242878 || input.img.length > 5242878) {
+    if (input.img.length < 2) {
+      error++;
+      setNotFilledImg(true);
+    } else {
+      setNotFilledImg(false);
+    }
+    if (input.img.length > 5242878) {
+      error++;
       setTooManyChar(true);
     } else {
-      const getitem = localStorage.getItem("user");
-      console.log(getitem);
+      setTooManyChar(false);
+    }
+    if (error < 1) {
       localStorage.setItem("user", JSON.stringify(input));
-      setNotFilled(false);
+      setNotFilledName(false);
+      setNotFilledImg(false);
       navigate("/logined");
     }
   };
@@ -37,8 +51,13 @@ const RegisterForm = () => {
                   <BsUpload size={75} className="my-5" />
                 </label>
               </div>
+              {notFilledImg ? (
+                <div className="text-caution font-bold">upload img</div>
+              ) : (
+                <br />
+              )}
               {tooManyChar ? (
-                <div className="text-[#Ea2424] font-bold">Too big item</div>
+                <div className="text-caution font-bold">Too big item</div>
               ) : (
                 ""
               )}
@@ -73,8 +92,8 @@ const RegisterForm = () => {
               id="name"
               className="bg-[#e6ebff] px-5 py-3 rounded-md w-3/4"
             />
-            {notFilled ? (
-              <div className="text-[#Ea2424] font-bold">field is empty</div>
+            {notFilledName ? (
+              <div className="text-[#Ea2424] font-bold">fields is empty</div>
             ) : (
               <br />
             )}

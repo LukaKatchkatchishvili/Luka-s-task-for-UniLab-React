@@ -8,7 +8,7 @@ function TodoList({ todos, dispatch }) {
         <li
           key={todo.id}
           className={`flex justify-between items-center mb-2 px-5 py-2 rounded text-xl bg-black text-white ${
-            todo.complete ? "bg-[#ededed]" : ""
+            todo.complete ? "bg-checked transition-all" : ""
           }`}
         >
           <span className="flex-1">{todo.description}</span>
