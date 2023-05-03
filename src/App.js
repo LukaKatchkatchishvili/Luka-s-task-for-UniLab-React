@@ -1,7 +1,6 @@
-import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Pages/Home";
-import Logined from "./Components/Logined";
+import Logined from "./Pages/Logined";
+import GetStart from "./Pages/GetStart";
 
 function App() {
   return (
@@ -9,7 +8,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/logined" element={<Logined />}></Route>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={<GetStart />}></Route>
         </Routes>
       </BrowserRouter>
     </>
