@@ -80,7 +80,7 @@ const RegisterForm = () => {
               }}
             />
           </div>
-          <div className="my-7 md:my-0">
+          <div className="my-7 md:my-2">
             <div className="mx-auto text-md md:text-2xl">fill in your name</div>
             <input
               type="text"
