@@ -8,7 +8,7 @@ function TodoApp() {
 
   return (
     <section className="min-h-[90vh] bg-white">
-      <div className="flex flex-col items-center w-full p-16 md:p-10 md:w-[55%] lg:w-[35%] mx-auto">
+      <div className="flex flex-col items-center w-full p-8 md:p-16 md:w-[55%] lg:w-[35%] mx-auto">
         <h1 className="text-4xl text-center font-bold mb-4">
           Add Your Daily Tasks
         </h1>

@@ -11,7 +11,7 @@ function TodoList({ todos, dispatch }) {
             todo.complete ? "bg-checked transition-all" : ""
           }`}
         >
-          <span className="flex-1">{todo.description}</span>
+          <span className="flex-1 max-w-[70%] overflow-hidden overflow-ellipsis">{todo.description}</span>
           <div className="flex">
             <BsCheckLg
               onClick={() => dispatch({ type: "check-todo", payload: todo.id })}
